@@ -17,8 +17,9 @@ type DBConfig struct {
 func GetConfig() *Config {
 	return &Config{
 		DB: &DBConfig{
-			Dialect:  "mysql",
-			Host:     "host.docker.internal",
+			Dialect: "mysql",
+			// Host:     "host.docker.internal",
+			Host:     "localhost",
 			Port:     3306,
 			Username: "root",
 			Password: "",
