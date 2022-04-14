@@ -97,5 +97,7 @@ RUN go build -o go-todo main.go
 
 
 FROM scratch
+
 COPY --from=build-env /app/ .
+
 ENTRYPOINT ["./go-todo"]
