@@ -4,11 +4,11 @@ kind: Deployment
 
 metadata:
 
-  name: webapp-deployment
+  name: goapp-deployment
 
   labels:
 
-    app: webapp
+    app: goapp
 
 spec:
 
@@ -18,7 +18,7 @@ spec:
 
     matchLabels:
 
-      app: webapp
+      app: goapp
 
   template:
 
@@ -26,19 +26,19 @@ spec:
 
       labels:
 
-        app: webapp
+        app: goapp
 
     spec:
 
       containers:
 
-      - name: webapp
+      - name: goapp
 
-        image: nidhey27/ecom-web-app
+        image: poonam3112/to-do-app-test
 
         ports:
 
-        - containerPort: 80
+        - containerPort: 8080
 
 ---
 
@@ -48,7 +48,7 @@ kind: Service
 
 metadata:
 
-  name: webapp-service
+  name: goapp-service
 
 spec:
 
@@ -56,18 +56,18 @@ spec:
 
   selector:
 
-    app: webapp
+    app: goapp
 
   ports:
 
     - protocol: TCP
 
-      port: 80
+      port: 8080
 
-      targetPort: 80
+      targetPort: 8080
 
       nodePort: 31000
 
   selector:
 
-    deployment-label-key: webapp
+    deployment-label-key: goapp
